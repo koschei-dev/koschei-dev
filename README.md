@@ -12,7 +12,7 @@
   </picture>
 </a>
 
-<br><br>
+<br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/panels-dark.svg">
