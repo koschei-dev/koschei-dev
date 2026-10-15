@@ -14,8 +14,8 @@ from svgkit import HERE, THEMES, arrow, fit_size, monument, png_data, svg, t, wi
 
 ROOT = HERE.parent
 OUT = ROOT / "assets"
-USER = "seiunhim"
-SITE = "seiunhim.github.io/organizy-app"
+USER = "koschei-dev"
+SITE = "koschei-dev.github.io/organizy-app"
 W = 900  # every image shares this width so type renders at the same scale
 ICON = png_data(HERE / "organizy-icon.png")
 

@@ -1,18 +1,18 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img src="assets/hero-light.svg" width="100%" alt="koschei-dev. App builder and Cybersecurity student. I build small, careful tools for messy computers. English and Spanish.">
+  <img src="assets/hero-light.svg" width="100%" alt="koschei-dev. App builder and cybersecurity student in Santiago, DR. I build small, careful tools for messy computers. English and Spanish.">
 </picture>
 
 <br>
 
-<a href="https://seiunhim.github.io/organizy-app/#demo">
+<a href="https://koschei-dev.github.io/organizy-app/#demo">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/organizy-dark.svg">
     <img src="assets/organizy-light.svg" width="100%" alt="Organizy: a free Mac app that reads a messy folder, suggests where every file belongs, and moves nothing until you confirm. Every move can be undone. Try the live demo.">
   </picture>
 </a>
 
-<p><sub>Releases and issues: <a href="https://github.com/koschei-dev/organizy-app">seiunhim/organizy-app</a></sub></p>
+<p><sub>Releases and issues: <a href="https://github.com/koschei-dev/organizy-app">koschei-dev/organizy-app</a></sub></p>
 
 <br>
 
