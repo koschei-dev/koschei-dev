@@ -117,26 +117,8 @@ MESSY_ORDER = [2, 0, 4, 3, 1, 5]            # which file sits in each messy slot
 JITTER = [(12, -1.6), (-8, 1.2), (16, 0.9), (-12, -1.0), (4, 1.7), (-4, -1.3)]
 W = 900  # every image shares this width so type renders at the same scale
 
-def hero(c):
-    faces = ["mono", "mono-m", "display", "body"]
-    b, css = [], []
-    X = 4
-    b.append(t(X, 34, "~ / ", "mono", 16, c["muted"]))
-    bw = width("~ / ", "mono", 16)
-    b.append(t(X + bw, 34, USER, "mono-m", 16, c["fg"]))
-    cw = width(USER, "mono-m", 16)
-    b.append(f'<rect class="cursor" x="{X + bw + cw + 5:.1f}" y="21" width="8" height="16" fill="{c["accent"]}"/>')
-    p, w = pill(X, 62, "APP BUILDER", c, "mono-m", 12.5, h=24); b.append(p)
-    b.append(t(X, 118, "CYBERSECURITY STUDENT", "mono-m", 12.5, c["ink"]))
-    b.append(t(X, 138, "SANTIAGO, DR", "mono-m", 12.5, c["ink"]))
-    b.append(t(X - 3, 222, USER, "display", 86, c["fg"], extra='letter-spacing="-3"'))
-    nw = width(USER, "display", 86) - 3 * len(USER)
-    b.append(t(X - 3 + nw, 222, ".", "display", 86, c["accent"]))
-    b.append(t(X, 268, "I build small, careful tools", "body", 22, c["muted"]))
-    b.append(t(X, 298, "for messy computers.", "body", 22, c["muted"]))
-    b.append(t(X, 346, "english · español", "mono", 14, c["muted"]))
-
-    wx, wy, ww, ROW = 452, 6, 444, 28
+def demo_window(b, css, c, wx, wy, ww, ROW=28):
+    """An animated Organizy window: six messy files sort themselves into folders, then reset."""
     sorted_rows, folder_rows, slot = {}, [], 0
     for folder in sorted({f[2] for f in FILES}):
         folder_rows.append((folder, slot, sum(1 for f in FILES if f[2] == folder))); slot += 1
@@ -186,7 +168,29 @@ def hero(c):
     fy = wy + wh - 14
     b.append(f'<line x1="{wx}" x2="{wx+ww}" y1="{fy-18}" y2="{fy-18}" stroke="{c["line"]}"/>')
     b.append(t(wx + 16, fy, "organizy · nothing moves until you confirm", "mono", 11.5, c["muted"]))
-    H = wy + wh + 8
+    return wh
+
+def hero(c):
+    faces = ["mono", "mono-m", "display", "body"]
+    b, css = [], []
+    X = 4
+    b.append(t(X, 34, "~ / ", "mono", 16, c["muted"]))
+    bw = width("~ / ", "mono", 16)
+    b.append(t(X + bw, 34, USER, "mono-m", 16, c["fg"]))
+    cw = width(USER, "mono-m", 16)
+    b.append(f'<rect class="cursor" x="{X + bw + cw + 5:.1f}" y="21" width="8" height="16" fill="{c["accent"]}"/>')
+    p, w = pill(X, 62, "APP BUILDER", c, "mono-m", 12.5, h=24); b.append(p)
+    b.append(t(X, 118, "CYBERSECURITY STUDENT", "mono-m", 12.5, c["ink"]))
+    b.append(t(X, 138, "SANTIAGO, DR", "mono-m", 12.5, c["ink"]))
+    b.append(t(X - 3, 222, USER, "display", 86, c["fg"], extra='letter-spacing="-3"'))
+    nw = width(USER, "display", 86) - 3 * len(USER)
+    b.append(t(X - 3 + nw, 222, ".", "display", 86, c["accent"]))
+    b.append(t(X, 268, "I build small, careful tools", "body", 22, c["muted"]))
+    b.append(t(X, 298, "for messy computers.", "body", 22, c["muted"]))
+    b.append(t(X, 346, "english · español", "mono", 14, c["muted"]))
+
+    wh = demo_window(b, css, c, 452, 6, 444)
+    H = 6 + wh + 8
     return svg(W, H, "".join(b), faces, "".join(css),
                f"{USER}: app builder and cybersecurity student in Santiago, DR. I build small, careful tools for messy computers.")
 
