@@ -84,13 +84,13 @@ def organizy_card(c, data):
         b.append(t(P, y + i * 30, line, "text", 20, c["ink"]))
     fy = H - P + 2
     b.append(t(P, fy, "macOS 14 or later  ·  Swift and SwiftUI  ·  Learns your folders  ·  MIT", "text", 15, c["muted"]))
-    label = "Try the live demo"
+    label = "Watch the demo"
     lw = width(label, "text-m", 17)
     b.append(t(W - P - 22, fy, label, "text-m", 17, c["accent_ink"], "end"))
     b.append(arrow(W - P - 14, fy - 5.5, c["accent_ink"]))
     _ = lw
     return svg(W, H, "".join(b), ["display", "text", "text-m"], "".join(css),
-               "Organizy: a free Mac app that reads a messy folder, suggests where every file belongs, and moves nothing until you confirm. Try the live demo.")
+               "Organizy: a free Mac app that reads a messy folder, suggests where every file belongs, and moves nothing until you confirm. Watch the demo.")
 
 
 # ---------------------------------------------------------------- now / stack / principles
