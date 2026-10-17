@@ -5,7 +5,7 @@
 
 <br>
 
-<a href="https://koschei-dev.github.io/organizy-app/#demo">
+<a href="https://koschei-dev.github.io/organizy-app/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/organizy-dark.svg">
     <img src="assets/organizy-light.svg" width="100%" alt="Organizy: a free Mac app that reads a messy folder, suggests where every file belongs, and moves nothing until you confirm. Every move can be undone. Watch the demo.">
