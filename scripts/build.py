@@ -83,7 +83,7 @@ def organizy_card(c, data):
     for i, line in enumerate(wrap(desc, "text", 20, 560)):
         b.append(t(P, y + i * 30, line, "text", 20, c["ink"]))
     fy = H - P + 2
-    b.append(t(P, fy, "macOS 14 or later  ·  Swift and SwiftUI  ·  Optional local AI  ·  MIT", "text", 15, c["muted"]))
+    b.append(t(P, fy, "macOS 14 or later  ·  Swift and SwiftUI  ·  Learns your folders  ·  MIT", "text", 15, c["muted"]))
     label = "Try the live demo"
     lw = width(label, "text-m", 17)
     b.append(t(W - P - 22, fy, label, "text-m", 17, c["accent_ink"], "end"))
